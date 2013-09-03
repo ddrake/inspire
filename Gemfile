@@ -32,8 +32,34 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do 
+  gem 'rspec-rails' 
+  gem 'factory_girl_rails' 
+  gem 'debugger'
+  gem 'guard-rspec'
+end 
+
+group :test do 
+  gem 'faker' 
+  gem 'capybara'
+  gem 'launchy' 
+  gem 'libnotify'
+  # testing javascript through firefox (requires monkey patch of active record)
+  # see 'everyday testing' book
+  # gem 'selenium-webdriver'
+  # gem 'database_cleaner'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'capistrano'
+end
+
+gem 'zurb-foundation'
+gem 'jquery-datatables-rails', github: 'rahul100885/jquery-datatables-rails'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
