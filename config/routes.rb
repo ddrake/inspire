@@ -12,6 +12,9 @@ Inspire::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'messages#show'
+  
+  delete '/logout', to: 'sessions#destroy', via: :delete, as: :logout
+  get '/login', to: 'sessions#new', as: :login
 
 
   # Example of regular route:
