@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% unless @hidden %>
+<h2><%= @message.body %></h2>
+<% end %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @message.body %>
-</p>
-
-
+<%= link_to 'Hide message', inspirations_change_path %> |
+<%= link_to 'Log out', sessions_path, method: :delete %> |
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
