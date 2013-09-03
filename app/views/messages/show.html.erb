@@ -1,4 +1,4 @@
-<% unless @hidden %>
+<% unless @hidden || !@message %>
 <h2><%= @message.body %></h2>
 <% end %>
 

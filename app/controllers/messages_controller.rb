@@ -66,7 +66,11 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = current_user.message
+      unless current_user.message 
+        current_user.message = Message.first
+        current_user.save!
+      end
+      @message ||= current_user.message
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
