@@ -3,7 +3,6 @@ class Message < ActiveRecord::Base
 
   def self.find_next(message)
     new_message = Message.where('id > ?', message.id).first
-    debugger
     new_message = Message.first unless new_message
     return new_message
   end
